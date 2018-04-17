@@ -5,7 +5,12 @@ html(lang="en")
         meta(name="renderer", content="webkit")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
-        title= config.title
+        block description
+            meta(name="description", content= config.description)
+        meta(name="keywords", content="taoeer's blog")
+        title
+            block title
+                = config.title
         link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css")
         style
             include:scss ../../source/index.scss
