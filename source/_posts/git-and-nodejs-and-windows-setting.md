@@ -25,6 +25,7 @@ yarn global vue-cli create-react-app http-server browser-sync gulp-cli webpack
 ```
 
 # GIT
+```bash
 git config --global user.email "719012229@qq.com"
 git config --global user.name "taoeer"
 git config --global credential.helper store
@@ -37,3 +38,4 @@ git config --global alias.st status
 git config --global alias.cm commit -m
 git config --global alias.br branch
 git config --global alias.df diff
+```
