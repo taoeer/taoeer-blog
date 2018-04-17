@@ -3,13 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: TAOEER
+title: TAOEER'S BLOG
 subtitle: taoeer's blog
 description: one world, one code
 keywords: taoeer blog
 author: TAOEER
 language: zh-CN
-timezone: GMT+8
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -73,7 +72,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: apollo
+theme: taoeer
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

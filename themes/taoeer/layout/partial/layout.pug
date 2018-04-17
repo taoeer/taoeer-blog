@@ -5,15 +5,24 @@ html(lang="en")
         meta(name="renderer", content="webkit")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
-        block site_title= config.title
-    body
-        .header
-            .logo  TAOEER
-            ul.menu
-                li
-                    a 首页
-                li
-                    a(href="") 归档
-        block content
-        .footer
-            p copyright 2018
+        title= config.title
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css")
+        style
+            include:scss ../../source/index.scss
+        .header-wrap
+            .header.main-width.center
+                .logo
+                    a(href="/") TAOEER
+                ul.menu
+                    each value, key in theme.menu
+                        li.nav-list-item
+                            - var re = /^(http|https):\/\/*/gi;
+                            - var tar = re.test(value) ? "_blank" : "_self"
+                            - var act = !re.test(value) && "/"+page.current_url === value
+                            a.nav-list-link(class={active: act} href=url_for(value) target=tar)
+                                != key.toUpperCase()
+        .container.mt20.main-width.center
+            block content
+        .footer.text-center
+            - var date = new Date();
+            p &copy; COPYRIGHT #{date.getFullYear()}, POWERED BY TAOEER

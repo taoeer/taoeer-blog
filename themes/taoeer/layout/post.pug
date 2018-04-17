@@ -1,0 +1,8 @@
+extends partial/layout
+
+block content
+    div.post-detail
+        .post-meta
+            h1= page.title
+            time= full_date(page.date, 'll')
+        div.markdown-body.page-content!= page.content
