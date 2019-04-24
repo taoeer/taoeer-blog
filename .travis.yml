@@ -21,3 +21,6 @@ after_script:
   env:
     global:
       - GH_REF: github.com/taoeer/taoeer.github.io.git
+cache:
+  directories:
+  - node_modules
