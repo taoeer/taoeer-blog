@@ -8,13 +8,11 @@ before_install:
   - yarn config set sass-binary-site http://npm.taobao.org/mirrors/node-sass
 script: yarn build
 
-deploy:
-  repo: taoeer.github.io
-  target_branch: master
-  local_dir: public
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
-  fqdn: taoeer.top
-  on:
-    branch: master
+after_script:
+  - cd ./public
+  - git init
+  - git config --global user.name "taoeer"  #修改name
+  - git config --global user.email "719012229@qq.com"  #修改email
+  - git add .
+  - git commit -m "update"
+  - git push --force --quiet "https://${GITHUB_TOKEN}@github.com/taoeer/taoeer.github.io.git"
